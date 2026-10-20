@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mãos à Obra - Potência Elétrica e Efeito Joule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="icon">🔨⚡</span>
+            <h1>Mãos à Obra</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="#">Início</a>
+            <a href="#conteudo">Conteúdo Técnico</a>
+            <a href="#exemplos">Exemplos</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar no portal...">
+            <button onclick="executarBusca()">Buscar</button>
+        </div>
+        <div class="cta-buttons">
+            <a href="#contato" class="btn btn-secondary">Contato</a>
+            <a href="#" class="btn btn-primary">Entrar</a>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <main class="content-area">
+            <article class="topic-card">
+                <header class="topic-header">
+                    <span class="badge">Módulo Exclusivo</span>
+                    <h1>Potência Elétrica e Efeito Joule</h1>
+                </header>
+
+                <section class="topic-section">
+                    <h2>Introdução</h2>
+                    <p>A potência elétrica e o efeito Joule são conceitos centrais para o projeto e análise de sistemas eletroeletrônicos. Compreender a taxa de conversão de energia e o aquecimento derivado da passagem de corrente é fundamental para o dimensionamento seguro de cabos, escolha de componentes, desenvolvimento de sistemas de refrigeração e prevenção de falhas em circuitos residenciais e industriais.</p>
+                </section>
+
+                <section class="topic-section" id="conteudo">
+                    <h2>Conteúdo Técnico</h2>
+                    
+                    <h3>1. Potência Elétrica</h3>
+                    <p>Potência elétrica (\(P\)) é a quantidade de trabalho elétrico realizado por unidade de tempo, ou seja, a taxa com que a energia elétrica é convertida em outra forma de energia (como luz, calor ou movimento). A unidade de medida no Sistema Internacional é o Watt (W).</p>
+                    
+                    <p>A fórmula fundamental para circuitos de Corrente Contínua (CC) é:</p>
+                    <div class="formula-box">\(P = V \times I\)</div>
+                    <p>Onde \(P\) é a potência em Watts (W), \(V\) é a tensão em Volts (V) e \(I\) é a intensidade da corrente em Ampères (A).</p>
+
+                    <p>Combinando essa relação com a Lei de Ohm (\(V = I \times R\)), podemos expressar a potência em termos da resistência elétrica (\(R\)):</p>
+                    <div class="formula-box">\(P = I^2 \times R \quad \text{ou} \quad P = \frac{V^2}{R}\)</div>
+
+                    <h3>2. Efeito Joule</h3>
+                    <p>O Efeito Joule é o fenômeno físico no qual a passagem de corrente elétrica através de um condutor gera calor, resultante das colisões entre os elétrons em movimento e a estrutura atômica do condutor.</p>
+                    
+                    <p>A quantidade de energia térmica (\(Q\)) dissipada em Joules (J) durante um tempo \(t\) (em segundos) é dada por:</p>
+                    <div class="formula-box">\(Q = I^2 \times R \times t\)</div>
+
+                    <p>Quando expressa em calorias (cal), utiliza-se o fator de conversão de equivalência térmica (\(1\text{ cal} \approx 4{,}18\text{ J}\)):</p>
+                    <div class="formula-box">\(Q_{\text{cal}} \approx 0{,}24 \times I^2 \times R \times t\)</div>
+                </section>
+
+                <section class="topic-section" id="exemplos">
+                    <h2>Exemplos Práticos</h2>
+                    <div class="example-grid">
+                        <div class="example-card">
+                            <h4>Chuveiro Elétrico</h4>
+                            <p>Um chuveiro de \(5500\text{ W}\) ligado em \(220\text{ V}\) exige uma corrente de \(I = \frac{5500}{220} = 25\text{ A}\). O aquecimento rápido da água ocorre justamente pelo efeito Joule no resistor do chuveiro.</p>
+                        </div>
+                        <div class="example-card">
+                            <h4>Dimensionamento de Condutores</h4>
+                            <p>Se a fiação elétrica de uma instalação possui resistência elevada ou Bitola incorreta, a corrente gerará um aquecimento indesejado (perda por efeito Joule), podendo derreter o isolamento térmico e causar curto-circuito.</p>
+                        </div>
+                        <div class="example-card">
+                            <h4>Fusíveis Térmicos</h4>
+                            <p>Dispositivos de segurança usam o efeito Joule a seu favor: quando a corrente ultrapassa o limite do projeto, o aquecimento derrete um elemento condutor interno, abrindo o circuito e protegendo a instalação.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="topic-section">
+                    <h2>Recursos Visuais</h2>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" alt="Placa de circuito e dissipador de calor">
+                            <figcaption>Figura 1: Dissipadores de calor em circuitos eletrônicos evitam sobreaquecimento por Efeito Joule. (Fonte: Unsplash)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=600" alt="Resistor com código de cores">
+                            <figcaption>Figura 2: Resistores convertem energia elétrica excedente em calor em circuitos. (Fonte: Unsplash)</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="topic-section summary-box">
+                    <h2>Resumo para o Caderno 📝</h2>
+                    <ul>
+                        <li><strong>Potência Elétrica (\(P\)):</strong> Medida em Watts (W). Representa a velocidade de conversão de energia.</li>
+                        <li><strong>Fórmula Principal:</strong> \(P = V \times I\).</li>
+                        <li><strong>Fórmulas Secundárias:</strong> \(P = I^2 \times R\) e \(P = \frac{V^2}{R}\).</li>
+                        <li><strong>Efeito Joule:</strong> Transformação de energia elétrica em energia térmica devido às colisões de elétrons no condutor (\(Q = I^2 \times R \times t\)).</li>
+                        <li><strong>Aplicação Principal:</strong> Aquecedores, fusíveis, chuveiros (desejável) e perdas em linhas de transmissão (indesejável).</li>
+                    </ul>
+                </section>
+
+                <section class="topic-section" id="quiz">
+                    <h2>Quiz de Fixação 🧠</h2>
+                    <div id="quiz-container">
+                        <div class="question" id="q1">
+                            <p>1. Um resistor de \(10\ \Omega\) é percorrido por uma corrente de \(2\text{ A}\). Qual é a potência dissipada por ele?</p>
+                            <button onclick="checarResposta('q1', false)">A) \(20\text{ W}\)</button>
+                            <button onclick="checarResposta('q1', true)">B) \(40\text{ W}\)</button>
+                            <button onclick="checarResposta('q1', false)">C) \(100\text{ W}\)</button>
+                            <div class="feedback"></div>
+                        </div>
+
+                        <div class="question" id="q2">
+                            <p>2. Por que as linhas de transmissão operam em alta tensão para longas distâncias?</p>
+                            <button onclick="checarResposta('q2', false)">A) Para aumentar a corrente nos cabos.</button>
+                            <button onclick="checarResposta('q2', true)">B) Para reduzir a corrente e minimizar as perdas por Efeito Joule.</button>
+                            <button onclick="checarResposta('q2', false)">C) Para eliminar a resistência dos condutores.</button>
+                            <div class="feedback"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="topic-section">
+                    <h2>Referências</h2>
+                    <ul>
+                        <li>BOYLESTAD, Robert L. <em>Introdução à Análise de Circuitos</em>. 13ª ed. São Paulo: Pearson, 2019.</li>
+                        <li>SADIKU, Matthew N. O.; ALEXANDER, Charles K. <em>Fundamentos de Circuitos Elétricos</em>. 6ª ed. Porto Alegre: AMGH, 2017.</li>
+                        <li>Imagens gratuitas obtidas via Unsplash (Licença Aberta/Livre uso).</li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <footer class="footer" id="contato">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Mãos à Obra</h4>
+                <p>Portal educacional focado em Eletroeletrônica: Potência Elétrica e Efeito Joule.</p>
+                <p>© 2026 Mãos à Obra. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Institucionais</h4>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Políticas de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>Email: contato@maosaobra.com.br</p>
+                <p>Tel: (51) 3700-0000</p>
+                <p>CNPJ: 00.123.456/0001-89</p>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais & Mapa</h4>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">YouTube</a>
+                </div>
+                <p><a href="#">Mapa do Site (Sitemap)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
